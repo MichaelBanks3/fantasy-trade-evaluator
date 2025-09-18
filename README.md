@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+#Fantasy Football Trade Evaluator (Dynasty)
 
-## Getting Started
+###A learning-first, production-minded web app for dynasty fantasy football trades. Built to be clear (not a black box), configurable to your league, and solid enough that your league mates can actually use it.
 
-First, run the development server:
+###North Star: Ship a transparent, roster-aware dynasty trade evaluator with a clean UI, clear math, and an auditable value breakdown that scales from a personal project to a real portfolio piece employers can evaluate.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+##Why this exists
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+###Most trade calculators are black boxes and/or tuned for redraft. Dynasty value depends on age curves, positional scarcity, league format (e.g., Superflex, TE premium), and whether you’re contending or rebuilding. This app aims to:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+###Be dynasty-native (age, windows, picks matter).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+###Explain every verdict (no mystery numbers).
 
-## Learn More
+###Adapt to your league & roster (context-aware, not generic).
 
-To learn more about Next.js, take a look at the following resources:
+##Flagship differentiators 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+###Roster‑Aware Dynasty Value Engine
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+###Inputs: league settings (Superflex, TE premium, roster/starting slots) + your roster profile (average age, positional depth) + your window (Contend ↔ Rebuild slider).
 
-## Deploy on Vercel
+###Output: a value for each side that blends Projected Production (next 1–2 seasons) with Long‑Term Value (age curve + market).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+###Why it’s unique: most calculators ignore your roster context and window.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+##Transparent Value Breakdown (“Why?” Panel)
+
+###For every player/pick, show the components:
+• Market (ADP/consensus)
+• Production (role/snap share proxy, later projections)
+• Age Curve (dynasty window)
+• Scarcity (replacement-level at position)
+
+###Users can see how the verdict was reached and tweak assumptions live.
+
+###Stretch goals: Draft‑class pick curves by year, injury‑risk toggles, “what‑if” scenarios, and sync with Sleeper league settings (manual first, API later).
+
+##Project status
+
+✅ Next.js app scaffolded (TypeScript, App Router).
+
+🟨 MVP evaluator (UI → API → simple logic) — Next task.
+
+⬜ Prisma + SQLite schema for Player/Pick + seed script.
+
+⬜ Transparent breakdown UI.
+
+⬜ League settings form (SF/TEP/roster sizes) + window slider.
+
+⬜ Deploy to Vercel + (later) Postgres/Neon.
